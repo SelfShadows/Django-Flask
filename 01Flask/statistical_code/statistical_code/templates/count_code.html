@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block  container_fluid %}
+
+    <div class="row page-titles">
+        <div class="col-md-6 col-8 align-self-center">
+            <h3 class="text-themecolor m-b-0 m-t-0">Dashboard</h3>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+        </div>
+        <div class="col-md-6 col-4 align-self-center">
+            <a href="#" class="btn pull-right hidden-sm-down btn-success">Download Here</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-block">
+                    <div id="container" style="min-width:400px;height:400px"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-block">
+                    <h4 class="card-title">用户代码总量统计表</h4>
+                    <div class="table-responsive m-t-40">
+                        <table class="table stylish-table">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>用户名</th>
+                                <th>提交日期</th>
+                                <th>代码行数</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for user in code_list %}
+                                <tr>
+                                    <td>{{ user.id }}</td>
+                                    <td>{{ user.name }}</td>
+                                    <td>{{ user.create_date}}</td>
+                                    <td>{{ user.create_date}}</td>
+                                    <td>{{ user.line }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
+    <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+    <script>
+        var chart = Highcharts.chart('container', {
+            chart: {
+                type: 'spline'
+            },
+            title: {
+                text: '每日提交代码量趋势图'
+            },
+            subtitle: {
+                text: '非规律性时间内的变化'
+            },
+            xAxis: {
+                type: 'datetime',
+                title: {
+                    text: null
+                }
+            },
+            colors: ['#6CF', '#39F', '#06C', '#036', '#000'],
+            yAxis: {
+                title: {
+                    text: '代码条数)'
+                },
+                min: 0
+            },
+            tooltip: {
+                headerFormat: '<b>{series.name}</b><br>',
+                pointFormat: '{point.x:%e. %b}: {point.y:.0f} 条'
+            },
+            plotOptions: {
+                spline: {
+                    marker: {
+                        enabled: true
+                    }
+                }
+            },
+            series: [{
+                name: 'xiaoli',
+                // Define the data points. All series have a dummy year
+                // of 1970/71 in order to be compared on the same x axis. Note
+                // that in JavaScript, months start at 0 for January, 1 for February etc.
+                data: [
+                    {% for item in code_list %}
+                        [Date.UTC({{ item.c_time }}), {{ item.line }}],
+                    {% endfor %}
+                ],
+            }]
+        });
+    </script>
+{% endblock %}

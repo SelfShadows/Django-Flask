@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block  container_fluid %}
+    <div class="row page-titles">
+        <div class="col-md-6 col-8 align-self-center">
+            <h3 class="text-themecolor m-b-0 m-t-0">Dashboard</h3>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+        </div>
+        <div class="col-md-6 col-4 align-self-center">
+            <a href="#" class="btn pull-right hidden-sm-down btn-success">Download Here</a>
+        </div>
+    </div>
+    {{ info }}
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-block">
+                    <div id="container" style="min-width:400px;height:400px"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-block">
+                    <h4 class="card-title">用户代码总量统计表</h4>
+                    <div class="table-responsive m-t-40">
+                        <table class="table stylish-table">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>用户</th>
+                                <th>昵称</th>
+                                <th>代码总数</th>
+                                <th>查看代码提交记录</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for user in user_list %}
+                                <tr>
+                                    <td>{{ user.id }}</td>
+                                    <td>{{ user.name }}</td>
+                                    <td>{{ user.nickname }}</td>
+                                    <td>{{ user.total }}</td>
+                                    <td><a href="/detail/{{ user.id }}">查看</a></td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
+
+    <script>
+        var chart = Highcharts.chart('container', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: '代码统计图'
+            },
+            xAxis: {
+                type: 'category',
+                labels: {
+                    rotation: 0  // 设置轴标签旋转角度
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: '代码总量 (条)'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            tooltip: {
+                pointFormat: '代码总量: <b>{point.y:.0f} 条</b>'
+            },
+            series: [{
+                name: '代码总量',
+
+                data: [
+                    {% for foo in user_list %}
+                        ['{{ foo.name }}', {{ foo.total }}],
+                    {% endfor %}
+                ],
+                dataLabels: {
+                    enabled: true,
+                    rotation: -90,
+                    color: '#FFFFFF',
+                    align: 'right',
+                    format: '{point.y:.0f}',
+                    y: 10,
+                }
+            }]
+        });
+    </script>
+{% endblock %}

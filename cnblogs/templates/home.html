@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block page-main %}
+    <div class="article-list">
+        {% for article in article_list %}
+            <div class="article">
+                <p class="media-heading">{{ article.title }}</p>
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object author-img" src="/media/{{ article.user.avatar }}"
+                                 alt="...">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <p>{{ article.desc }}</p>
+                    </div>
+                </div>
+                <div class="article_span">
+                    <span><a href="">{{ article.user.username }}</a></span>发布于
+                    <span>{{ article.create_time|date:"Y-m-d H:i:s" }}</span>
+                    <span><i class="fa fa-commenting-o fa-fw"
+                             aria-hidden="true"></i>评论({{ article.comment_count }})</span>
+                    <span><i class="fa fa-thumbs-o-up fa-fw"
+                             aria-hidden="true"></i>点赞({{ article.up_count }})</span>
+                    <hr>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

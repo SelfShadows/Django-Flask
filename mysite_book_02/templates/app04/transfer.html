@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!--    viewport 支持移动端,并且移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+</head>
+<body>
+<h1>正经的网站</h1>
+<form action="/transfer/" method="post">
+    {% csrf_token %}
+    <p>转出姓名
+        <input type="text" name="user">
+    </p>
+    <p>金额
+        <input type="text" name="money">
+    </p>
+    <p>
+        <input type="submit" value="转账">
+    </p>
+
+</form>
+
+<script src="jquery-3.4.1.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

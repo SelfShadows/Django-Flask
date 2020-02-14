@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <style>
+        .error {
+            color: #a94442;
+        }
+
+        #center {
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="">
+            {% block name %}{% endblock %}
+            <form action="" class="form-horizontal" method="post" novalidate>
+                {% csrf_token %}
+                {% for field in model_form %}
+                    <div class="form-group {% if field.errors.0 %}has-error{% endif %}">
+                        <label class="col-sm-3 control-label">{{ field.label }}</label>
+                        <div class="col-sm-3" style="position: relative;">
+                            {{ field }}
+                            <span class="error">{{ field.errors.0 }}</span>
+                            {% if field.is_pop_one %}
+                                <span onclick="pop('{{ field.url }}')"
+                                      style="font-size: 22px; position: absolute; right: -10px; top: 0;">+</span>
+                            {% elif field.is_pop %}
+                                <span onclick="pop('{{ field.url }}')" id="add"
+                                      style="font-size: 22px; position: absolute; right: -10px; top: 30%;">+</span>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                {% endfor %}
+                <button class="btn btn-primary center-block">提交</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="/static/jquery-3.4.1.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/SweetAlert/sweetalert.min.js"></script>
+<script src="/static/setup_ajax.js"></script>
+
+<script>
+    $("#add").parent().siblings().attr("id", "center");  //添加一个center属性
+
+    function pop_response(pop_res_id, pk, text) {
+        console.log(pop_res_id, pk, text);
+
+        var $option = $("<option>");
+        $option.attr("selected", "selected");
+        $option.val(pk);
+        $option.text(text);
+        $("#" + pop_res_id).append($option)
+    }
+
+    function pop(url) {
+        window.open(url, "", "height=528, width=800px, top=300, left=300")
+    }
+
+</script>
+
+</body>
+</html>

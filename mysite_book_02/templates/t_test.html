@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+{#    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">#}
+    <!--    viewport 支持移动端,并且移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+</head>
+<body>
+{{ name_dic }}
+{{ name_dic.小李 }}
+<hr>
+{{ name_list.0 }}
+{{ name_list.1 }}
+<ul>
+    {% for name in name_list %}
+        <li>{{ name }}</li>
+    {% endfor %}
+</ul>
+{#格式化时间#}
+<p>{{ now_time|date:"Y-m-d H:i:s" }}</p>
+
+<p>大小为= {{ size|filesizeformat }}</p>
+<p>{{ content|truncatechars:7 }}</p>
+<p>{{ script }}</p>
+<hr>
+{#自定义filter#}
+{% load myfilter %}
+<p>{{ name_list.0|sb }}</p>
+<p>{{ name_list.1|add_str:"是个大傻逼" }}
+
+{#上传文件#}
+<form action="/t_test/" method="post" enctype="multipart/form-data">
+    <input type="file" name="upload_file">
+    <input type="submit" value="开始上传">
+</form>
+<hr>
+{# 导入hlml文件 #}
+{% include 't_test_1.html' %}
+
+
+
+{#<script src="jquery-3.4.1.js"></script>#}
+{#<script src="bootstrap/js/bootstrap.min.js"></script>#}
+</body>
+
+</html>

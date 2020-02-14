@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+
+{% block page-main %}
+    <div class="article_details">
+        <h1>{{ article.title }}</h1>
+        <p>{{ article.articledetail.content|safe }}</p>
+    </div>
+    {#    点赞开始#}
+    <div class="poll clearfix">
+        <div id="div_digg">
+            <div class="diggit action">
+                <span class="diggnum" id="digg_count">{{ article.up_count }}</span>
+            </div>
+            <div class="buryit action">
+                <span class="burynum" id="bury_count">{{ article.down_count }}</span>
+            </div>
+            <div class="clear"></div>
+            <div class="diggword" id="digg_tips">
+            </div>
+        </div>
+    </div>
+    {#    点赞结束#}
+    {#    评论开始#}
+    <ul class="list-group comment_list">
+        <li class="list-group-item" style="text-align: center"><h3>评论</h3></li>
+        {% for comment in comment_list %}
+            <li class="list-group-item">
+                <p>
+                    <span><a href="">#{{ forloop.counter }}楼</a></span>
+                    <span class="my_date">{{ comment.create_time|date:"Y-m-d H-i" }}</span>
+                    <span><a href="">{{ comment.user.username }}</a></span>
+                    <span class="pull-right reply" username="{{ comment.user.username }}" article_id="{{ comment.pk }}"><a>回复</a></span>
+                </p>
+                <hr>
+                {% if comment.parent_comment_id %}
+                    <p>
+                        <span>@{{ comment.parent_comment.user.username }}:</span>
+                        <span>{{ comment.parent_comment.content }}</span>
+                    </p>
+                {% endif %}
+
+                <p>{{ comment.content }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    {#    评论结束#}
+
+    <div class="comment_tree">评论树</div>
+
+    <hr>
+
+    <div class="comment">
+        {% if request.user.username %}
+        <p>
+            昵称:<input type="text" id="tbCommentAuthor" class="author" disabled="disabled" size="50"
+                      value="{{ request.user.username }}">
+        </p>
+        <span class="my_error"></span>
+        <div>评论类容:</div>
+        <textarea name="comment" id="comment_content" cols="80" rows="10"></textarea>
+        <p><input id="comment_but" type="button" value="提交评论"></p>
+        {% else %}
+            <p><a href="/login/?next={{ request.path_info }}">登陆</a>才能评论哦</p>
+        {% endif %}
+
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <script>
+        // 全局父评论id变量
+        var parent_id = "";
+
+        // 评论树
+        $.ajax({
+            url: "/comment_tree/" + "{{ article.pk }}/",
+            type: "get",
+            success: function (data) {
+                console.log(data);
+                $.each(data, function (index, comment_dict) {
+                    var s = '<div class="comment_item" comment_id="' + comment_dict.pk + '">\n' +
+                        '            <span class="content">' + comment_dict.content + '</span>';
+                    if (comment_dict.parent_comment_id) {
+                        // 子评论
+                        var pid = comment_dict.parent_comment_id;
+                        console.log(pid);
+                        $("[comment_id=" + pid + "]").append(s)
+                    } else {
+                        $(".comment_tree").append(s)
+                    }
+                })
+            }
+        });
+
+        // 绑定点赞事件
+        $("#div_digg .action").on("click", function () {
+            var is_up = $(this).hasClass("diggit");
+            var article_id = "{{ article.pk }}";
+            $.ajax({
+                url: "/get_up/",
+                type: "post",
+                data: {
+                    csrfmiddlewaretoken: $("[name='csrfmiddlewaretoken']").val(),
+                    is_up: is_up,
+                    article_id: article_id,
+                },
+                success: function (data) {
+                    if (data.status) {
+                        if (is_up) {
+                            var val = $("#div_digg .diggit").text();
+                            val = parseInt(val) + 1;
+                            $("#div_digg .diggit").text(val)
+                        } else {
+                            var val = $("#div_digg .buryit").text();
+                            val = parseInt(val) + 1;
+                            $("#div_digg .buryit").text(val)
+                        }
+                    }
+                    if (data.msg === "请先登陆") {
+                        $("#digg_tips").html('请先<a href="/login/">登陆</a>')
+                    } else {
+                        $("#digg_tips").text(data.msg)
+                    }
+
+                }
+            })
+        });
+
+        // 绑定提交评论事件
+        $("#comment_but").click(function () {
+            var article_id = "{{ article.pk }}";
+            var comment_content = $("#comment_content").val();
+            if (parent_id) {
+                var index = comment_content.indexOf("\n");
+                comment_content = comment_content.slice(index + 1)
+            }
+            $.ajax({
+                url: "/get_comment/",
+                type: "post",
+                data: {
+                    csrfmiddlewaretoken: $("[name='csrfmiddlewaretoken']").val(),
+                    article_id: article_id,
+                    comment_content: comment_content,
+                    parent_id: parent_id,
+                },
+                success: function (data) {
+                    if (data.status) {
+                        var comment_li = '<li class="list-group-item">' +
+                            '                  <span><a href="" >{{ request.user.username }}</a>:</span>\n' +
+                            '                <hr>\n' +
+                            '                <p>' + comment_content + '</p>\n' +
+                            '             </li>';
+                        $(".comment_list").append(comment_li);
+                        // 清空文本
+                        $("#comment_content").val("");
+                    } else {
+                        $(".my_error").text(data.msg)
+                    }
+
+                    // 清空parent_id
+                    parent_id = ""
+                }
+            })
+        });
+
+        // 绑定回复按钮
+        $(".reply").on("click", function () {
+            var v = "@" + $(this).attr("username") + "\n";
+            $("#comment_content").focus();
+            $("#comment_content").val(v);
+            // 添加评论id号
+            parent_id = $(this).attr("article_id")
+        })
+    </script>
+{% endblock %}

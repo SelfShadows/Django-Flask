@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+{#    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">#}
+{#    <!--    viewport 支持移动端,并且移动设备优先 -->#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1">#}
+    <title>user_list</title>
+</head>
+<body>
+<a href="/user_add/">添加用户</a>
+<table border="1">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in user_list %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+{#book_list开始#}
+<table border="1">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>title</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in book_list %}
+            <tr>
+                <td>{{ book.id }}</td>
+                <td>{{ book.title }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+{#book_lis结束#}
+
+{#<script src="jquery-3.4.1.js"></script>#}
+{#<script src="bootstrap/js/bootstrap.min.js"></script>#}
+</body>
+</html>

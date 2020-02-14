@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <!--    viewport 支持移动端,并且移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>编辑</title>
+</head>
+
+<form action="" method="post">
+<h1>编辑出版社</h1>
+<p>
+    <input type="text" class="" value="{{ publisher.id }}" style="display: none;" name="id" >
+    <input type="text" name="name" value="{{ publisher.name }}">
+    <input type="submit" value="提交">
+</p>
+</form>
+<p style="color: red;" >{{ error }}</p>
+
+<body>
+<script src="/static/jquery-3.4.1.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

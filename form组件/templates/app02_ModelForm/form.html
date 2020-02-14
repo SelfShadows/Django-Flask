@@ -1,0 +1,12 @@
+<form action="" method="post" novalidate>
+    {% csrf_token %}
+    {% for field in form %}
+        <div>
+            {{ field.label }}
+            {{ field }}
+            <span>{{ field.errors.0 }}</span>
+        </div>
+    {% endfor %}
+    <input type="submit" value="提交">
+
+</form>

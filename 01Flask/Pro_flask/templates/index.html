@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>用户信息</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>用户名</th>
+            <th>年龄</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for k,v in stu_dict.items() %}
+            <tr>
+                <td>{{ k }}</td>
+                <td>{{ v.name }}</td>
+                <td>{{ v.age }}</td>
+                <td>
+                    <a href="/detail/{{ k }}">用户详情</a>
+                    <a href="/delete/{{ k }}">删除</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

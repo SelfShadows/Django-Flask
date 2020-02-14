@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="51c17ce7-8efb-44fc-8c81-f7d0f02eb677" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>app</find>
+      <find>dis</find>
+      <find>tbody</find>
+      <find>mysql</find>
+      <find>block</find>
+      <find>home</find>
+      <find>删除</find>
+      <find>reverse</find>
+      <find>name_list</find>
+      <find>date</find>
+      <find>order</find>
+      <find>sit</find>
+    </findStrings>
+  </component>
+  <component name="ProjectId" id="1XndZjL67sNvXQFSs4d2KnyRGYJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\01Django\mysite_book_02\templates\app04" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\01Django\mysite_book_02" />
+      <recent name="E:\01Django\mysite_book_02\templates" />
+      <recent name="E:\01Django\mysite_book_02\static" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Django server.mysite_book_02">
+    <configuration name="author_list.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/mysite_book_02/templates/author_list.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="01ORM查询必会13条" type="PythonConfigurationType" factoryName="Python">
+      <module name="mysite_book_02" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/01ORM查询必会13条.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="02ORM正反向跨表查询" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="mysite_book_02" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/02ORM正反向跨表查询.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="04查询练习" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="mysite_book_02" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/04查询练习.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ORM_demo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="mysite_book_02" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ORM_demo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="urls" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="mysite_book_02" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mysite_book_02" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mysite_book_02/urls.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="mysite_book_02" type="Python.DjangoServer" factoryName="Django server">
+      <module name="mysite_book_02" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="mysite_book_02.settings" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8002" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Django server.mysite_book_02" />
+      <item itemvalue="JavaScript Debug.author_list.html" />
+      <item itemvalue="Python.01ORM查询必会13条" />
+      <item itemvalue="Python.04查询练习" />
+      <item itemvalue="Python.02ORM正反向跨表查询" />
+      <item itemvalue="Python.ORM_demo" />
+      <item itemvalue="Python.urls" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.author_list.html" />
+        <item itemvalue="Python.02ORM正反向跨表查询" />
+        <item itemvalue="Python.urls" />
+        <item itemvalue="Python.ORM_demo" />
+        <item itemvalue="Python.04查询练习" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="51c17ce7-8efb-44fc-8c81-f7d0f02eb677" name="Default Changelist" comment="" />
+      <created>1568955608471</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1568955608471</updated>
+      <workItem from="1568955611518" duration="14553000" />
+      <workItem from="1569039468148" duration="10287000" />
+      <workItem from="1569209598922" duration="16052000" />
+      <workItem from="1569298102609" duration="12482000" />
+      <workItem from="1570525113059" duration="1158000" />
+      <workItem from="1570595064322" duration="5307000" />
+      <workItem from="1570670381150" duration="6204000" />
+      <workItem from="1570769053628" duration="2336000" />
+      <workItem from="1570776945612" duration="8178000" />
+      <workItem from="1570855811930" duration="8395000" />
+      <workItem from="1570873456056" duration="894000" />
+      <workItem from="1570886561865" duration="308000" />
+      <workItem from="1570887705441" duration="606000" />
+      <workItem from="1570945131907" duration="1907000" />
+      <workItem from="1570947122572" duration="1787000" />
+      <workItem from="1570948934364" duration="1750000" />
+      <workItem from="1570950747985" duration="1970000" />
+      <workItem from="1570953509956" duration="1991000" />
+      <workItem from="1570956500086" duration="957000" />
+      <workItem from="1571034273307" duration="199000" />
+      <workItem from="1571035084195" duration="15290000" />
+      <workItem from="1571114641757" duration="5795000" />
+      <workItem from="1571727210717" duration="1844000" />
+      <workItem from="1571894075438" duration="609000" />
+      <workItem from="1572066010989" duration="8627000" />
+      <workItem from="1572244706877" duration="933000" />
+      <workItem from="1572509728581" duration="275000" />
+      <workItem from="1572512007688" duration="1305000" />
+      <workItem from="1572519689425" duration="6684000" />
+      <workItem from="1572585666479" duration="595000" />
+      <workItem from="1573364750063" duration="599000" />
+      <workItem from="1573545300615" duration="599000" />
+      <workItem from="1573713864947" duration="100000" />
+      <workItem from="1573714286483" duration="5954000" />
+      <workItem from="1573796260945" duration="656000" />
+      <workItem from="1573981485950" duration="46000" />
+      <workItem from="1573983210653" duration="64000" />
+      <workItem from="1574000084842" duration="3342000" />
+      <workItem from="1574055241003" duration="601000" />
+      <workItem from="1574141982023" duration="34000" />
+      <workItem from="1574144625126" duration="4554000" />
+      <workItem from="1574398849490" duration="1311000" />
+      <workItem from="1574484503521" duration="77000" />
+      <workItem from="1574494432361" duration="119000" />
+      <workItem from="1574667313634" duration="5511000" />
+      <workItem from="1574744857752" duration="629000" />
+      <workItem from="1575085053170" duration="569000" />
+      <workItem from="1575087114930" duration="12068000" />
+      <workItem from="1575167456786" duration="1411000" />
+      <workItem from="1575362610066" duration="9000" />
+      <workItem from="1575363535236" duration="629000" />
+      <workItem from="1575365083028" duration="14000" />
+      <workItem from="1575365900254" duration="608000" />
+      <workItem from="1575380868420" duration="2052000" />
+      <workItem from="1575522428870" duration="151000" />
+      <workItem from="1575524328028" duration="618000" />
+      <workItem from="1575530469830" duration="1189000" />
+      <workItem from="1575534696458" duration="21000" />
+      <workItem from="1575610489092" duration="2569000" />
+      <workItem from="1575618735260" duration="5160000" />
+      <workItem from="1575630789671" duration="81000" />
+      <workItem from="1575693296637" duration="3556000" />
+      <workItem from="1575710259201" duration="43000" />
+      <workItem from="1575716713327" duration="923000" />
+      <workItem from="1575721738925" duration="263000" />
+      <workItem from="1575781453443" duration="599000" />
+      <workItem from="1575960510609" duration="9867000" />
+      <workItem from="1576041831960" duration="13160000" />
+      <workItem from="1576126254409" duration="3701000" />
+      <workItem from="1576212211257" duration="2333000" />
+      <workItem from="1576215719721" duration="3473000" />
+      <workItem from="1576297080685" duration="599000" />
+      <workItem from="1576308295749" duration="8000" />
+      <workItem from="1576387309143" duration="1286000" />
+      <workItem from="1576391210753" duration="1848000" />
+      <workItem from="1576395366205" duration="3261000" />
+      <workItem from="1576475396670" duration="39000" />
+      <workItem from="1576485306463" duration="2043000" />
+      <workItem from="1576557497571" duration="12000" />
+      <workItem from="1576558635747" duration="1004000" />
+      <workItem from="1576562069989" duration="25000" />
+      <workItem from="1576569192466" duration="100000" />
+      <workItem from="1576569332277" duration="333000" />
+      <workItem from="1576730800665" duration="773000" />
+      <workItem from="1576826470190" duration="624000" />
+      <workItem from="1576835817784" duration="34000" />
+      <workItem from="1576914593768" duration="3954000" />
+      <workItem from="1576995829720" duration="1757000" />
+      <workItem from="1577024064932" duration="567000" />
+      <workItem from="1577085807035" duration="1834000" />
+      <workItem from="1577162032324" duration="1178000" />
+      <workItem from="1577687017233" duration="17000" />
+      <workItem from="1577687044370" duration="14000" />
+      <workItem from="1578377931252" duration="620000" />
+      <workItem from="1578828778962" duration="105000" />
+      <workItem from="1579080666412" duration="669000" />
+      <workItem from="1579148499711" duration="599000" />
+      <workItem from="1579253846751" duration="719000" />
+      <workItem from="1579352348398" duration="54000" />
+      <workItem from="1579850510698" duration="1349000" />
+      <workItem from="1580287842851" duration="36000" />
+      <workItem from="1580289920772" duration="32000" />
+      <workItem from="1580460188172" duration="366000" />
+      <workItem from="1580461628704" duration="251000" />
+      <workItem from="1580462573942" duration="1587000" />
+      <workItem from="1580537540649" duration="598000" />
+      <workItem from="1580710179053" duration="27000" />
+      <workItem from="1581390780289" duration="2011000" />
+      <workItem from="1581685852210" duration="721000" />
+      <workItem from="1581687002822" duration="64000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="668" y="126" key="#mysite_book_02" timestamp="1581685909768">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="668" y="126" key="#mysite_book_02/0.0.1920.1040@0.0.1920.1040" timestamp="1581685909768" />
+    <state width="1877" height="135" key="GridCell.Tab.0.bottom" timestamp="1581686574097">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="135" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581686574097" />
+    <state width="1877" height="135" key="GridCell.Tab.0.center" timestamp="1581686574097">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="135" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581686574097" />
+    <state width="1877" height="135" key="GridCell.Tab.0.left" timestamp="1581686574097">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="135" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581686574097" />
+    <state width="1877" height="135" key="GridCell.Tab.0.right" timestamp="1581686574097">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="135" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581686574097" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1581686126580">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581686126580" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/mysite_book_02$01ORM13.coverage" NAME="01ORM查询必会13条 Coverage Results" MODIFIED="1576049316100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mysite_book_02$urls.coverage" NAME="urls Coverage Results" MODIFIED="1576062410522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysite_book_02" />
+    <SUITE FILE_PATH="coverage/mysite_book_02$04.coverage" NAME="04查询练习 Coverage Results" MODIFIED="1575098601630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mysite_book_02$ORM_demo.coverage" NAME="ORM_demo Coverage Results" MODIFIED="1575630376846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mysite_book_02$ORM01.coverage" NAME="ORM01 Coverage Results" MODIFIED="1570946857252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mysite_book_02$03.coverage" NAME="03一对一测试 Coverage Results" MODIFIED="1571128209890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mysite_book_02$ORM0113.coverage" NAME="ORM01查询必会13条 Coverage Results" MODIFIED="1571036521985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mysite_book_02$02ORM.coverage" NAME="02ORM正反向跨表查询 Coverage Results" MODIFIED="1580463177863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mysite_book_02$ORM02.coverage" NAME="ORM02正反向跨表查询 Coverage Results" MODIFIED="1571054772295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mysite_book_02$ORM.coverage" NAME="ORM练习 Coverage Results" MODIFIED="1570949518735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="Copyright.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

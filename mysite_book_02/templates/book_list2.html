@@ -1,0 +1,86 @@
+{# 继承母板 #}
+{% extends 'a_base.html' %}
+
+
+{# 把自己页面的内容，塞到母板里面相应的位置 #}
+{% block page-main %}
+    <h1 class="page-header">管理后台
+        <small></small>
+    </h1>
+    <div class="row placeholders">
+        <!-- 表单开始-->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title text-left">书籍列表</h3>
+            </div>
+            <div class="panel-body">
+                <!--表单下第一行开始-->
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for...">
+                            <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">Go!</button>
+                                    </span>
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                    <a class="btn btn-success pull-right col-md-1 text-center" style="margin-right: 15px"
+                       href="/book_add/">新页面添加</a>
+                    {#<button class="btn btn-success pull-right col-md-1 " style="margin-right: 15px ">添加</button>#}
+
+                </div>
+                <!--表单下第一行结束-->
+
+
+                <!--                        表格开始-->
+                <div class="table-responsive" style="margin-top: 10px;">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>id</th>
+                            <th>书名</th>
+                            <th>出版社</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for book in book_list %}
+                            <tr class="text-left">
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ book.id }}</td>
+                                <td>{{ book.title }}</td>
+                                <td>{{ book.publisher.name }}</td>
+                                <td>
+                                    <a class="btn btn-danger" href="/book_delete/?id={{ book.id }}">删除</a>
+                                    <a class="btn btn-info" href="/book_edit/?id={{ book.id }}">编辑</a>
+                                </td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                {#                                    colspan=”5”占5列  empty：for循环里没有数据的时候执行的代码#}
+                                <td colspan="5" class="text-center">暂时没有数据哦</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <!--                        表格结束-->
+                <!--                    分页开始-->
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        {{ page_html|safe }}
+                    </ul>
+                </nav>
+                <!--                    分页结束-->
+            </div>
+            <!--表单结束-->
+        </div>
+    </div>
+
+{% endblock %}}
+
+
+{% block b_class %}
+    active
+{% endblock %}

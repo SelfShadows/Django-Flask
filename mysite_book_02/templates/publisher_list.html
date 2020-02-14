@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://v3.bootcss.com/examples/dashboard/ -->
+<html lang="zh-CN">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <link href="https://v3.bootcss.com/favicon.ico" rel="icon">
+
+    <title>Dashboard Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./Dashboard Template for Bootstrap_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/dashboard.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+{#导航条开始#}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar"
+                    data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://v3.bootcss.com/examples/dashboard/#">小黑书</a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar">
+            <ul class="nav navbar-nav ">
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">Dashboard</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">Settings</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">Profile</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">Help</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{#导航条结束#}
+
+<div class="container-fluid">
+    <div class="row">
+        {#左侧栏开始#}
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+{#                <li class="active"><a href="https://v3.bootcss.com/examples/dashboard/#">出版社列表 <span class="sr-only">(current)</span></a>#}
+{#                </li>#}
+                <li class="active"><a href="{% url "home_page" %}">出版社列表</a></li>
+                <li ><a href="/book_list/">书籍列表</a></li>
+                <li><a href="/author_list/">作者列表</a></li>
+            </ul>
+        </div>
+        {#左侧栏结束#}
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">管理后台
+                <small></small>
+            </h1>
+            <div class="row placeholders">
+                <!-- 表单开始-->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-left">出版社列表</h3>
+                    </div>
+                    <div class="panel-body">
+                        <!--表单下第一行开始-->
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search for...">
+                                    <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">Go!</button>
+                                    </span>
+                                </div><!-- /input-group -->
+                            </div><!-- /.col-lg-6 -->
+                             <a class="btn btn-success pull-right col-md-1" style="margin-right: 15px" href="/publisher_add/">添加</a>
+{#                            <button class="btn btn-success pull-right col-md-1 " style="margin-right: 15px ">添加</button>#}
+
+                        </div>
+                        <!--表单下第一行结束-->
+
+
+                        <!--                        表格开始-->
+                        <div class="table-responsive" style="margin-top: 10px;">
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>id</th>
+                                    <th>name</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for ret in ret_list %}
+                                    <tr class="text-left">
+                                        <td>{{ forloop.counter }}</td>
+                                        <td>{{ ret.id }}</td>
+                                        <td>{{ ret.name }}</td>
+                                        <td>
+                                            <a class="btn btn-danger" href="/publisher_delete/?id={{ ret.id }}">删除</a>
+                                            <a class="btn btn-danger" href="/publisher_delete/{{ ret.id }}/">删除2</a>
+                                            <a class="btn btn-info" href="/publisher_edit/?id={{ ret.id }}">编辑</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--                        表格结束-->
+                        <!--                    分页开始-->
+                        <nav aria-label="Page navigation ">
+                            <ul class="pagination navbar-collapse">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!--                    分页结束-->
+                    </div>
+                    <!--表单结束-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./Dashboard Template for Bootstrap_files/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="./Dashboard Template for Bootstrap_files/bootstrap.min.js"></script>
+    <script src="/static/jquery-3.4.1.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

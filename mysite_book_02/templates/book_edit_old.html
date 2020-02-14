@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <!--    viewport 支持移动端,并且移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>修改</title>
+</head>
+<form action="" method="post">
+    <h1>修改书籍</h1>
+    <p>
+        <input type="text" name="id" value="{{ book_obj.id }}" style="display: none;">
+        <input type="text" name="book_title" value="{{ book_obj.title }}">
+    </p>
+    <p>出版社:
+        <select name="publisher" id="">
+            {% for publisher  in publisher_list %}
+                {% if book_obj.publisher.id == publisher.id %}
+                    {# selected为渲染页面的默认选项#}
+                    <option selected value="{{ publisher.id }}">{{ publisher.name }}</option>
+                {% else %}
+                    <option  value="{{ publisher.id }}">{{ publisher.name }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+    </p>
+    <p>
+        <input type="submit" value="提交">
+    </p>
+
+</form>
+<p style="color: red;">{{ error }}</p>
+
+<body>
+<script src="/static/jquery-3.4.1.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

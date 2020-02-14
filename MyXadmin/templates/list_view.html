@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/SweetAlert/sweetalert.css">
+    <style>
+        h2 {
+            margin-top: 30px;
+        }
+
+        .row {
+            margin-top: 10px;
+        }
+        .filter a{
+            text-decoration: none;
+            color: #5e5e5e;
+        }
+        .active{
+            color: rebeccapurple!important;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="col-md-6 col-md-offset-2">
+        <h1>查询 {{ model_name }} 数据</h1>
+        <div class="row">
+            <div class="col-md-1 pull-right">
+                <a href="{{ url_add_get }}" class=" btn btn-primary">增加</a>
+            </div>
+            {#搜索按钮开始#}
+            {% if showlist.config.search_fields %}
+                <form action="">
+                    <div class="input-group  col-md-4">
+                        <input type="text" class="form-control" name="p" placeholder="Search for..."
+                               value="{{ showlist.config.search_value }}">
+                        <span class="input-group-btn">
+                        <button class="btn btn-default">Go!</button>
+                    </span>
+                    </div>
+                </form>
+            {% endif %}
+
+            {#搜索按钮结束#}
+        </div>
+
+        <div class="row">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="input-group pull-left col-md-3">
+                    <select name="actions" id="" class="form-control">
+                    <option class="" value="">-----------------------------------</option>
+                        {% for actions in showlist.get_actions_list %}
+                            <option class="" value="{{ actions.name }}">{{ actions.desc }}</option>
+                        {% endfor %}
+                    </select>
+                    <span class="input-group-btn">
+                <button class="btn btn-default">Go!</button>
+            </span>
+                </div>
+
+
+                <table class="table table-striped table-bordered">
+                    <thead>
+                    <tr>
+                        {% for header in showlist.get_header %}
+                            <th>{{ header }}</th>
+                        {% endfor %}</tr>
+                    </thead>
+                    <tbody>
+                    {% for data_new in showlist.get_page.0 %}
+                        <tr>
+                            {% for data in data_new %}
+                                <td>{{ data }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+
+                </table>
+            </form>
+
+            {#分页开始#}
+            <nav aria-label="Page navigation" class="pull-right">
+                <ul class="pagination">
+                    {{ showlist.get_page.1|safe }}
+                </ul>
+            </nav>
+            {#分页结束#}
+        </div>
+    </div>
+
+    <div class="col-md-2">
+        <div class="filter">
+            {% for filed, linktag in showlist.get_filter_link_tags.items %}
+                <div class="well">
+                <h4>{{ filed }}</h4>
+                {% for a_link in linktag %}
+                <p>{{ a_link|safe }}</p>
+                {% endfor %}
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/static/jquery-3.4.1.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/SweetAlert/sweetalert.min.js"></script>
+<script src="/static/setup_ajax.js"></script>
+<script>
+    // 绑定点击 全选 单选框事件
+    $(".choice").click(function () {
+
+        // 如果 全选单选框 选中 值为true
+        if ($(this).prop("checked")) {
+            // 让所有单选框 选中 值为true
+            $(".choice_full").prop("checked", true)
+        } else {
+            $(".choice_full").prop("checked", false)
+        }
+    });
+
+
+    // 绑定点击 删除 事件
+    $(".del").on("click", function () {
+        var url = $(this).attr("url");
+        var tr = $(this).parent().parent().parent();
+        swal({
+                title: "确认删除",
+                text: "删除了就找不回来了!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "删除",
+                cancelButtonText: "取消",
+                closeOnConfirm: false
+            },
+            function () {
+                $.ajax({
+                    url: url,
+                    type: "get",
+                    success: function (arg) {
+                        swal("删除成功", "Your imaginary file has been deleted.", "success");
+                        tr.remove()
+                    }
+                })
+            });
+    })
+
+</script>
+
+
+</body>
+</html>

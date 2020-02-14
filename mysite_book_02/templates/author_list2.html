@@ -1,0 +1,103 @@
+
+
+{% extends "a_base.html" %}
+
+{% block page-main %}
+    <h1 class="page-header">管理后台
+        <small></small>
+    </h1>
+    <div class="row placeholders">
+        <!-- 表单开始-->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title text-left">作者列表</h3>
+            </div>
+            <div class="panel-body">
+                <!--表单下第一行开始-->
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for...">
+                            <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">Go!</button>
+                                    </span>
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                    <a class="btn btn-success pull-right col-md-1" style="margin-right: 15px"
+                       href="/author_add/">添加</a>
+                    {#                            <button class="btn btn-success pull-right col-md-1 " style="margin-right: 15px ">添加</button>#}
+
+                </div>
+                <!--表单下第一行结束-->
+                <!-- 表格开始 -->
+                <div class="table-responsive" style="margin-top: 10px;">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>id</th>
+                            <th>姓名</th>
+                            <th>作品</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for ret in author_list %}
+                            <tr class="text-left">
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ ret.id }}</td>
+                                <td>{{ ret.name }}</td>
+                                <td>
+                                    {% for book in ret.book.all %}
+                                        {% if forloop.last %}
+                                            {{ book.title }}
+                                        {% else %}
+                                            {{ book.title }} ||
+                                        {% endif %}
+                                    {% endfor %}
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" href="/author_delete/?id={{ ret.id }}">删除</a>
+                                    <a class="btn btn-info" href="{% url "a_edit" %}?id={{ ret.id }}">编辑</a>
+                                </td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                {#                                    colspan=”5”占5列  empty：for循环里没有数据的时候执行的代码#}
+                                <td colspan="5" class="text-center">暂时没有数据哦</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <!--                        表格结束-->
+                <!--                    分页开始-->
+                <nav aria-label="Page navigation ">
+                    <ul class="pagination navbar-collapse">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!--                    分页结束-->
+            </div>
+            <!--表单结束-->
+        </div>
+    </div>
+{% endblock %}
+
+{% block a_class %}
+    active
+{% endblock %}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>用户详情</h1>
+{% for k, v in info.items() %}
+    <ul>
+        <li>
+            {{ k }}: {{ v }}
+        </li>
+    </ul>
+{% endfor %}
+
+</body>
+</html>

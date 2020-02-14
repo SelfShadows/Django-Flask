@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <!--    viewport 支持移动端,并且移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登陆</title>
+</head>
+
+<body>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>id</th>
+        <th>姓名</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for ret in author %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ ret.id }}</td>
+        <td>{{ ret.name }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{#分页开始#}
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+      {{ page_html|safe }}
+  </ul>
+</nav>
+{#分页结束#}
+
+
+<script src="/static/jquery-3.4.1.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

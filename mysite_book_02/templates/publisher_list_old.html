@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <!--    viewport 支持移动端,并且移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登陆</title>
+</head>
+<a href="/publisher_add/">添加出版社</a>
+<table border="1">
+    <thead>
+        <tr>
+            <th>序号</th>
+            <th>id</th>
+            <th>name</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ret in ret_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ ret.id }}</td>
+                <td>{{ ret.name }}</td>
+                <td>
+                    <a href="/publisher_delete/?id={{ ret.id }}">删除</a>
+                    <a href="/publisher_edit/?id={{ ret.id }}">编辑</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+
+
+<body>
+<script src="/static/jquery-3.4.1.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

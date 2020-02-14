@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://v3.bootcss.com/examples/dashboard/ -->
+<html lang="zh-CN">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <link href="https://v3.bootcss.com/favicon.ico" rel="icon">
+
+    <title>Dashboard Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./Dashboard Template for Bootstrap_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/dashboard.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+{#导航条开始#}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar"
+                    data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://v3.bootcss.com/examples/dashboard/#">小黑书</a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar">
+            <ul class="nav navbar-nav ">
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">Dashboard</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">Settings</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">Profile</a></li>
+                <li><a href="https://v3.bootcss.com/examples/dashboard/#">Help</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{#导航条结束#}
+
+<div class="container-fluid">
+    <div class="row">
+        {#左侧栏开始#}
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                {#                <li class="active"><a href="https://v3.bootcss.com/examples/dashboard/#">出版社列表 <span class="sr-only">(current)</span></a>#}
+                {#                </li>#}
+                <li><a href="{% url "home_page" %}">出版社列表</a></li>
+                <li class="{% block  b_class %}{% endblock %}"><a href="/book_list/">书籍列表</a></li>
+                <li class="{% block  a_class %}{% endblock %}"><a href="/author_list/">作者列表</a></li>
+            </ul>
+        </div>
+        {#左侧栏结束#}
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            {# 这里面是每个页面不同的部分 #}
+            {% block page-main %}
+
+            {% endblock %}
+        </div>
+    </div>
+</div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./Dashboard Template for Bootstrap_files/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="./Dashboard Template for Bootstrap_files/bootstrap.min.js"></script>
+    <script src="/static/jquery-3.4.1.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

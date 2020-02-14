@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AJAX局部刷新实例</title>
+</head>
+<body>
+{% csrf_token %}
+<input type="text" id="i1">+
+<input type="text" id="i2">=
+<input type="text" id="i3">
+<input type="button" value="AJAX提交" id="b1">
+<input type="button" value="AJAX提交3" id="b3">
+<input type="button" value="呵呵哒" id="b2">
+
+<script src="/static/jquery-3.4.1.js"></script>
+<script src="/static/setup_ajax.js"></script>
+<script>
+    {# 点击b1 要做的事 #}
+    $("#b1").on("click", function () {
+        {# 往后端发数据 #}
+        $.ajax({
+            url: "/ajax_add/",
+            type: "GET",
+            data: {"i1":$("#i1").val(), "i2":$("#i2").val()},
+            success: function (data) {
+                $("#i3").val(data);
+            }
+        })
+    });
+
+    $("#b2").on("click", function () {
+        $.ajax({
+            url : "/text/",
+            type : "GET",
+            success : function (arg) {
+                // 在页面上创建一个标签
+                var imgEle = document.createElement("img");
+                imgEle.src = arg;
+                // 把创建的img标签添加到文档中
+                $("#b2").after(imgEle);
+            }
+        })
+    });
+
+    $("#b3").on("click", function () {
+        {#csrf_token = $("[name='csrfmiddlewaretoken']").val();#}
+        $.ajax({
+            url : "/test_post/",
+            type : "post",
+            data: {"i1":$("#i1").val(), "i2":$("#i2").val(),},
+            success : function (arg) {
+                $("#i3").val(arg)
+            }
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <!--    viewport 支持移动端,并且移动设备优先 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.bootcss.com/normalize/8.0.1/normalize.css" rel="stylesheet">
+    <title>添加</title>
+</head>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-primary " style="margin-top: 100px;">
+            <div class="panel-heading">
+                <h3 class="panel-title">编辑出版社</h3>
+            </div>
+            <div class="panel-body">
+                {#        表单开始#}
+                <form class="form-horizontal" method="post">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">修改的出版社</label>
+                        <div class="col-sm-10">
+                           <input type="text" class="" value="{{ publisher.id }}" style="display: none;" name="id" >
+                            <input name="name" class="form-control" placeholder="" value="{{ publisher.name }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <input type="submit" value="提交" class="btn btn-success">
+                        </div>
+                    </div>
+                </form>
+                {#        表单结束#}
+                <p style="color: red;">{{ error }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{#<form action="" method="post">#}
+{#    <p>书名:#}
+{#        <input type="text" name="book_title">#}
+{#    </p>#}
+{#    <p>出版社:#}
+{#        <select name="publisher" id="">#}
+{#            {% for publisher  in publisher_list %}#}
+{#                <option value="{{ publisher.id }}">{{ publisher.name }}</option>#}
+{#            {% endfor %}#}
+{#        </select>#}
+{#    </p>#}
+{#    <p>#}
+{#        <input type="submit" value="提交">#}
+{#    </p>#}
+{#</form>#}
+
+<body>
+<script src="/static/jquery-3.4.1.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

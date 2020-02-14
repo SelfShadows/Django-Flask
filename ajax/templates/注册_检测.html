@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/SweetAlert/sweetalert.css">
+    {#    <link rel="stylesheet" href="/static/Toastr/toastr.min.css">#}
+    <link href="https://cdn.bootcss.com/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
+    <style>
+        h2 {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<p>用户名：
+    <input id="i1" type="text">
+    <span id="e1" style="color: red"></span>
+</p>
+
+<script src="/static/jquery-3.4.1.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/SweetAlert/sweetalert.min.js"></script>
+<script src="/static/setup_ajax.js"></script>
+
+<script>
+    // 绑定失去焦点事件
+    $("#i1").on("blur", function () {
+        $i1Ele = $(this);
+        var name = $i1Ele.val();
+
+        $.ajax({
+            url:"/check_user/",
+            type:"post",
+            data:{"name":name ,"sb":JSON.stringify([1,2,3])},
+            success:function (msg) {
+                $e1Ele = $("#e1");
+                var e0 = ($i1Ele.val());
+                if (e0 === ""){
+                    $e1Ele.text("用户名不能为空")
+                }else{
+                $e1Ele.text(msg);
+                }
+            }
+        })
+    })
+
+</script>
+
+</body>
+</html>
